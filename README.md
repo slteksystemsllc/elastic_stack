@@ -11,7 +11,7 @@ Make it simple to deploy a full fledged Elastic Stack with advanced capabilities
 Contain scripts for easy deployment to production systems
 
 ## Prerequisites
-Must have Docker installed. An example of how to do this on an Ubuntu 16.04 system is as below:
+Must have Docker installed. An example of how to do this on an Ubuntu 18.04 system is as below:
 
 ```bash
 sudo apt-get install -y wget
