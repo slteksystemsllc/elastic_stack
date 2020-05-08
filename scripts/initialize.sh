@@ -1,7 +1,7 @@
 #!/bin/bash
 cd /opt/
 
-sudo git clone https://github.com/slteksystemsllc/elastic_stack.git
+git clone https://github.com/slteksystemsllc/elastic_stack.git
 
 cp -f /opt/elastic_stack/docker-compose.yml.example /opt/elastic_stack/docker-compose.yml
 cp -f /opt/elastic_stack/curator/example/* /opt/elastic_stack/curator/
