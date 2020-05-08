@@ -15,7 +15,7 @@ Must have Docker installed. An example of how to do this on an Ubuntu 16.04 syst
 
 ```bash
 sudo apt-get install -y wget
-wget https://github.com/slteksystemsllc/elastic_stack/raw/master/scripts/prereq.sh
+sudo wget https://github.com/slteksystemsllc/elastic_stack/raw/master/scripts/prereq.sh
 sudo bash prereq.sh
 sudo git clone https://github.com/slteksystemsllc/elastic_stack.git
 sudo bash /opt/elastic_stack/scripts/initialize.sh
