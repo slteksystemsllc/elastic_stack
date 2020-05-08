@@ -15,6 +15,7 @@ mkdir /opt/elastic_stack/elastalert/rules
 cp -f /opt/elastic_stack/elastalert/example_rules/* /opt/elastic_stack/elastalert/rules/
 cp -f /opt/elastic_stack/logstash/pipelines.yml.example /opt/elastic_stack/logstash/pipelines.yml
 
+mkdir /usr/share/logstash/
 mkdir /usr/share/logstash/config/
 cp -f /opt/elastic_stack/logstash/pipelines.yml /usr/share/logstash/config/
 
