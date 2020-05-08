@@ -10,5 +10,20 @@ fi
 mkdir /opt/elastic_stack/elastalert/rules
 cp -f /opt/elastic_stack/elastalert/example_rules/* /opt/elastic_stack/elastalert/rules/
 cp -f /opt/elastic_stack/logstash/pipelines.yml.example /opt/elastic_stack/logstash/pipelines.yml
+
+mkdir /usr/share/logstash/config/
+cp -f /opt/elastic_stack/logstash/pipelines.yml /usr/share/logstash/config/
+
+mkdir /opt/logstash_configs/
+cp -f /opt/elastic_stack/logstash/logstash_configs/* /opt/logstash_configs/
+
+mkdir /etc/nsm/rules/
+cp -f /opt/elastic_stack/logstash/rules/* /etc/nsm/rules/
+
+mkdir /usr/share/logstash/data/ 
+
 cd /opt/elastic_stack
+
 docker-compose up --no-start
+
+
