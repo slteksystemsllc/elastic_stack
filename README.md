@@ -19,7 +19,7 @@ wget https://github.com/slteksystemsllc/elastic_stack/raw/master/scripts/prereq.
 sudo bash prereq.sh
 sudo git clone https://github.com/slteksystemsllc/elastic_stack.git
 sudo bash /opt/elastic_stack/scripts/initialize.sh
-docker-compose up -d
+sudo docker-compose up -d
 # Wait until Elasticsearch is running then run this:
 bash elasticsearch/indexes/import.sh
 ```
