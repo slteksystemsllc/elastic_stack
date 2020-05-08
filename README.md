@@ -14,6 +14,7 @@ Contain scripts for easy deployment to production systems
 Must have Docker installed. An example of how to do this on an Ubuntu 16.04 system is as below:
 
 ```bash
+cd /opt
 sudo apt-get install -y wget
 sudo wget https://github.com/slteksystemsllc/elastic_stack/raw/master/scripts/prereq.sh
 sudo bash prereq.sh
