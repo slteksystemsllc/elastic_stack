@@ -15,14 +15,14 @@ mkdir /opt/elastic_stack/elastalert/rules
 cp -f /opt/elastic_stack/elastalert/example_rules/* /opt/elastic_stack/elastalert/rules/
 cp -f /opt/elastic_stack/logstash/pipelines.yml.example /opt/elastic_stack/logstash/pipelines.yml
 
-mkdir /usr/share/logstash/
-mkdir /usr/share/logstash/config/
+mkdir -p /usr/share/logstash/config/
+
 cp -f /opt/elastic_stack/logstash/pipelines.yml /usr/share/logstash/config/
 
 mkdir /opt/logstash_configs/
 cp -r /opt/elastic_stack/logstash/logstash_configs/* /opt/logstash_configs/
 
-mkdir /etc/nsm/rules/
+mkdir -p /etc/nsm/rules/
 cp -r /opt/elastic_stack/logstash/rules/* /etc/nsm/rules/
 
 mkdir /usr/share/logstash/data/ 
