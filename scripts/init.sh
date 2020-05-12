@@ -27,9 +27,9 @@ cp -r /opt/elastic_stack/logstash/logstash_configs/* /opt/logstash_configs/
 mkdir -p /etc/nsm/rules/
 cp -r /opt/elastic_stack/logstash/rules/* /etc/nsm/rules/
 
-mkdir /usr/share/logstash/data/
+mkdir -p /usr/share/logstash/data/
 
-mkdir /opt/domain_stats2/data
+mkdir -p /opt/domain_stats2/data
 
 sudo chown 1000:1000 /opt/domain_stats2
 
