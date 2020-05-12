@@ -1,7 +1,7 @@
 #!/bin/bash
 cd /opt/
 
-git clone https://github.com/slteksystemsllc/elastic_stack.git
+git clone https://github.com/slteksystemsllc/elastic_stack_6.5.2.git
 
 sudo chown 1000:1000 -R /opt/elastic_stack/
 
