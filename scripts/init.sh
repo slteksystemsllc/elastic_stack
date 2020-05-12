@@ -5,7 +5,7 @@ git clone https://github.com/slteksystemsllc/elastic_stack.git
 
 sudo chown 1000:1000 -R /opt/elastic_stack/
 
-cp -f /opt/elastic_stack/docker-compose.yml.example /opt/elastic_stack/docker-compose.yml
+cp -f /opt/elastic_stack/docker-compose-new.yml /opt/elastic_stack/docker-compose.yml
 cp -f /opt/elastic_stack/curator/example/* /opt/elastic_stack/curator/
 cp -f /opt/elastic_stack/cron/custom-cron.example /opt/elastic_stack/cron/custom-cron
 cp -f /opt/elastic_stack/elastalert/config.yaml.example /opt/elastic_stack/elastalert/config.yaml
