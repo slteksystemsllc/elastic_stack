@@ -1,4 +1,4 @@
-# elastic_stack
+# elastic_stack_6.5.2
 
 Deploying the Elastic Stack can be difficult. This project hopes to simplify that.
 
