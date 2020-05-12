@@ -1,6 +1,6 @@
 # elastic_stack
 
-Deploying the Elastic Stack can be difficult. This project hopes to simplify that.
+THIS IS IN BETA PLEASE DO NOT USE JUST YET - Deploying the Elastic Stack can be difficult. This project hopes to simplify that.
 
 ### Initial Goal
 
