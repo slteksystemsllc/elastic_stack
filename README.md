@@ -15,10 +15,10 @@ Must have Docker installed. An example of how to do this on an Ubuntu 18.04 syst
 
 ```bash
 sudo apt-get install -y wget
-sudo wget https://github.com/slteksystemsllc/elastic_stack/raw/master/scripts/prereq.sh
+sudo wget https://github.com/slteksystemsllc/elastic_stack_6.5.2/raw/master/scripts/prereq.sh
 sudo bash prereq.sh
 
-sudo wget https://github.com/slteksystemsllc/elastic_stack/raw/master/scripts/initialize.sh
+sudo wget https://github.com/slteksystemsllc/elastic_stack_6.5.2/raw/master/scripts/initialize.sh
 sudo bash initialize.sh
 
 # Navigate to /opt/elastic_stack/ and run the following command.  This will start the stack in daemon mode.
