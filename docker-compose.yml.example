@@ -63,7 +63,6 @@ services:
       - ./logstash/translate:/opt/elastic_stack/logstash/translate:ro
       - ./logstash/rules:/etc/nsm/rules:ro
       - ./logstash/persistent_data:/usr/share/logstash/data
-      - ./logstash/dictionaries:/etc/logstash/dictionaries:ro
     networks:
       - esnet
     logging:
