@@ -112,7 +112,7 @@ services:
         max-size: "200k"
         max-file: "10"
   elastalert:
-    image: bitsensor/elastalert:3.0.0-beta.1
+    image: hasecuritysolutions/elastalert:v1.0
     ports:
       - 3030:3030
       - 3333:3333
@@ -121,12 +121,7 @@ services:
     depends_on:
       - es01
     volumes:
-      - ./elastalert/config/elastalert:/etc/elastalert:ro
-      - ./elastalert/config/elastalert.yaml:/opt/elastalert/config.yaml:ro
-      - ./elastalert/config/elastalert-test.yaml:/opt/elastalert/config-test.yaml:ro
-      - ./elastalert/config/config.json:/opt/elastalert-server/config/config.json:ro
-      - ./elastalert/rules:/opt/elastalert/rules
-      - ./elastalert/rule_templates:/opt/elastalert/rules_templates:ro
+          - ./elastalert/rules:/etc/elastalert/rules
     networks:
       - esnet
     logging:
