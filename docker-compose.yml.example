@@ -1,24 +1,21 @@
-version: '2.2'
+version: '3.7'
 services:
-  elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:6.5.2
-    container_name: elasticsearch
+  es01:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.9.2
+    container_name: es01
     restart: always
     environment:
-      - cluster.name=labmeinc
-      - node.name=elasticsearch
+      - node.name=es01
       - bootstrap.memory_lock=true
-      - discovery.type=single-node
-      - "ES_JAVA_OPTS=-Xms2g -Xmx2g"
+      - "ES_JAVA_OPTS=-Xms8g -Xmx8g"
       - path.repo=/snapshots
     ulimits:
       memlock:
         soft: -1
         hard: -1
-    mem_limit: 4g
     volumes:
-      - ./elasticsearch/es_data:/usr/share/elasticsearch/data
-      - ./elasticsearch/snapshots:/snapshots
+      - esdata01:/usr/share/elasticsearch/data
+      - esdata01:/snapshots
     ports:
       - 9200:9200
     networks:
@@ -29,14 +26,14 @@ services:
         max-size: "200k"
         max-file: "10"
   kibana:
-    image: docker.elastic.co/kibana/kibana:6.5.2
+    image: docker.elastic.co/kibana/kibana:7.9.2
     container_name: kibana
     restart: always
     depends_on:
-      - elasticsearch
+      - es01
     environment:
-      - SERVER_NAME=kibana
-      - ELASTICSEARCH_URL=http://elasticsearch:9200
+      SERVER_NAME: kibana
+      ELASTICSEARCH_HOSTS: http://es01:9200
     ports:
       - 5601:5601
     networks:
@@ -47,17 +44,15 @@ services:
         max-size: "200k"
         max-file: "10"
   logstash:
-    image: hasecuritysolutions/logstash:v6.5.2
+    image: docker.elastic.co/logstash/logstash:7.9.2
     container_name: logstash
     restart: always
     environment:
-      - ELASTICSEARCH_HOST=elasticsearch
+      - ELASTICSEARCH_HOST=es01
       - pipeline.batch.size=125
       - config.reload.automatic=true
-      - config.reload.interval=30s
       - queue.type=persisted
-      - "LS_JAVA_OPTS:-Xmx2g -Xms1g"
-    mem_limit: 4g
+      - "LS_JAVA_OPTS:-Xmx4g-Xms4g"
     ports:
       - 5044:5044
       - 5045:5045
@@ -68,6 +63,7 @@ services:
       - ./logstash/translate:/opt/elastic_stack/logstash/translate:ro
       - ./logstash/rules:/etc/nsm/rules:ro
       - ./logstash/persistent_data:/usr/share/logstash/data
+      - ./logstash/dictionaries:/etc/logstash/dictionaries:ro
     networks:
       - esnet
     logging:
@@ -105,7 +101,7 @@ services:
     image: hasecuritysolutions/cerebro:v1.0
     container_name: cerebro
     depends_on:
-      - elasticsearch
+      - es01
     ports:
       - 9000:9000
     networks:
@@ -116,13 +112,21 @@ services:
         max-size: "200k"
         max-file: "10"
   elastalert:
-    image: hasecuritysolutions/elastalert:v1.0
+    image: bitsensor/elastalert:3.0.0-beta.1
+    ports:
+      - 3030:3030
+      - 3333:3333
     container_name: elastalert
     restart: always
     depends_on:
-      - elasticsearch
+      - es01
     volumes:
-      - ./elastalert:/etc/elastalert:ro
+      - ./elastalert/config/elastalert:/etc/elastalert:ro
+      - ./elastalert/config/elastalert.yaml:/opt/elastalert/config.yaml:ro
+      - ./elastalert/config/elastalert-test.yaml:/opt/elastalert/config-test.yaml:ro
+      - ./elastalert/config/config.json:/opt/elastalert-server/config/config.json:ro
+      - ./elastalert/rules:/opt/elastalert/rules
+      - ./elastalert/rule_templates:/opt/elastalert/rules_templates:ro
     networks:
       - esnet
     logging:
@@ -130,7 +134,10 @@ services:
       options:
         max-size: "200k"
         max-file: "10"
-
+volumes:
+  esdata01:
+    driver: local
 networks:
   esnet:
     driver: bridge
+
