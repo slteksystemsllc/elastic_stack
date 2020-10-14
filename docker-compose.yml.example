@@ -70,64 +70,6 @@ services:
       options:
         max-size: "200k"
         max-file: "10"
-  freq_server:
-    image: hasecuritysolutions/freq_server:v1.0
-    container_name: freq_server
-    restart: always
-    ports:
-      - 10004:10004
-    networks:
-      - esnet
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "200k"
-        max-file: "10"
-  domain_stats:
-    image: hasecuritysolutions/domain_stats:v1.0
-    container_name: domain_stats
-    restart: always
-    ports:
-      - 20000:20000
-    networks:
-      - esnet
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "200k"
-        max-file: "10"
-  cerebro:
-    image: hasecuritysolutions/cerebro:v1.0
-    container_name: cerebro
-    depends_on:
-      - es01
-    ports:
-      - 9000:9000
-    networks:
-      - esnet
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "200k"
-        max-file: "10"
-  elastalert:
-    image: hasecuritysolutions/elastalert:v1.0
-    ports:
-      - 3030:3030
-      - 3333:3333
-    container_name: elastalert
-    restart: always
-    depends_on:
-      - es01
-    volumes:
-          - ./elastalert/rules:/etc/elastalert/rules
-    networks:
-      - esnet
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "200k"
-        max-file: "10"
 volumes:
   esdata01:
     driver: local
