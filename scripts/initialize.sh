@@ -13,6 +13,19 @@ mkdir -p /usr/share/logstash/config/
 mkdir -p /usr/share/logstash/configs/
 mkdir -p /usr/share/logstash/data/
 
+mkdir -p /etc/elastalert/
+mkdir -p /opt/elastalert/
+mkdir -p /opt/elastalert-server/config/
+mkdir -p /opt/elastalert/rules/
+mkdir -p /opt/elastalert/rules_templates/
+
+cp -f /opt/elastic_stack/elastalert/example_rules/* /opt/elastalert/rules/
+cp -f /opt/elastic_stack/elastalert/config.yaml.example /opt/elastalert/config.yaml
+cp -f /opt/elastic_stack/elastalert/config/config.json /opt/elastalert-server/config/config.json
+cp -f /opt/elastic_stack/elastalert/rules /elastalert/rules:
+
+ 
+
 cp -f /opt/elastic_stack/docker-compose.yml.example /opt/elastic_stack/docker-compose.yml
 cp -f /opt/elastic_stack/curator/example/* /opt/elastic_stack/curator/
 cp -f /opt/elastic_stack/cron/custom-cron.example /opt/elastic_stack/cron/custom-cron
