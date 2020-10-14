@@ -22,6 +22,9 @@ sudo apt-get upgrade
 # Install wget
 sudo apt-get install -y wget
 
+# Change to the working directory /opt
+cd /opt
+
 # Download the prerequisites script and run in bash
 sudo wget https://github.com/slteksystemsllc/elastic_stack/raw/master/scripts/prereq.sh
 sudo bash prereq.sh
