@@ -19,7 +19,8 @@ mkdir /opt/logstash_configs/
 cp -r /opt/elastic_stack/logstash/logstash_configs/* /opt/logstash_configs/
 mkdir -p /usr/share/logstash/data/
 mkdir -p /usr/share/logstash/config/
-cp -f /opt/elastic_stack/logstash/pipelines.yml /usr/share/logstash/config/
+cp -f /opt/elastic_stack/logstash/pipelines.yml.example  /usr/share/logstash/config/pipelines.yml
+
 
 mkdir -p /etc/nsm/rules/
 mkdir -p /opt/elastic_stack/elastalert/rules
