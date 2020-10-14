@@ -34,6 +34,7 @@ sudo wget https://github.com/slteksystemsllc/elastic_stack/raw/master/scripts/in
 sudo bash initialize.sh
 
 # Navigate to /opt/elastic_stack/ and run the following command.  This will start the stack in daemon mode.
+cd /opt/elastic_stack/
 sudo docker-compose up -d
 
 # Wait until Elasticsearch is running then run this bsah script to install elasticsearch index's
