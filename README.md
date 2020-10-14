@@ -13,17 +13,26 @@ Contain scripts for easy deployment to production systems
 ## Prerequisites
 Must have Docker installed. An example of how to do this on an Ubuntu 18.04 system is as below:
 
-```bash
+```#Assumes you have downloaded and installed Ubuntu 18.04 minimum to start. Follow the rest of the steps below to configure and get up and running
+
+# Once Ubuntu is insalled run update and upgrade commands to update system
+sudo apt-get update
+sudo apt-get upgrade
+
+# Install wget
 sudo apt-get install -y wget
+
+# Download the prerequisites script and run in bash
 sudo wget https://github.com/slteksystemsllc/elastic_stack/raw/master/scripts/prereq.sh
 sudo bash prereq.sh
 
+# Download the initialization script and run in bash
 sudo wget https://github.com/slteksystemsllc/elastic_stack/raw/master/scripts/initialize.sh
 sudo bash initialize.sh
 
 # Navigate to /opt/elastic_stack/ and run the following command.  This will start the stack in daemon mode.
 sudo docker-compose up -d
 
-# Wait until Elasticsearch is running then run this:
+# Wait until Elasticsearch is running then run this bsah script to install elasticsearch index's
 bash elasticsearch/indexes/import.sh
 ```
