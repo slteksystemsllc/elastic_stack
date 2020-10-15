@@ -26,12 +26,10 @@ sudo apt-get install -y wget
 cd /opt
 
 # Download the prerequisites script and run in bash
-sudo wget https://github.com/slteksystemsllc/elastic_stack/raw/master/scripts/prereq.sh
-sudo bash prereq.sh
+sudo wget https://github.com/slteksystemsllc/elastic_stack/raw/master/scripts/prereq.sh && sudo bash prereq.sh
 
 # Download the initialization script and run in bash
-sudo wget https://github.com/slteksystemsllc/elastic_stack/raw/master/scripts/initialize.sh
-sudo bash initialize.sh
+sudo wget https://github.com/slteksystemsllc/elastic_stack/raw/master/scripts/initialize.sh && sudo bash initialize.sh
 
 # Navigate to /opt/elastic_stack/ and run the following command.  This will start the stack in daemon mode.
 cd /opt/elastic_stack/
