@@ -8,13 +8,11 @@ sudo chown 1000:1000 -R /opt/elastic_stack/
 # Elasticsearc Pre-Config
 
 mkdir -p /usr/share/elastic_stack/
-mkdir -p /usr/share/elastic_stack/curator/
 mkdir -p /usr/share/elastic_stack/cron/custom-cron/
 
 sudo chown 1000:1000 -R /usr/share/elastic_stack/
 
 cp -f /opt/elastic_stack/docker-compose.yml.example /usr/share/elastic_stack/docker-compose.yml
-cp -r /opt/elastic_stack/curator/example/* /usr/share/elastic_stack/curator/
 cp -f /opt/elastic_stack/cron/custom-cron.example /usr/share/elastic_stack/cron/custom-cron/
 
 #########################################################
