@@ -112,7 +112,7 @@ services:
         max-size: "200k"
         max-file: "10"
   elastalert:
-    image: bitsensor/elastalert:3.0.0-beta.1
+    image: hasecuritysolutions/elastalert:0.2.4
     ports:
       - 3030:3030
       - 3333:3333
