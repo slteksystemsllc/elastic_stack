@@ -112,7 +112,7 @@ services:
       -  /usr/share/elastalert:/etc/elastalert:ro
       -  /usr/share/elastalert/config.yaml:/opt/elastalert/config.yaml:ro
       -  /usr/share/elastalert/elastalert-server/config/config.json:/opt/elastalert-server/config/config.json:ro
-      -  /usr/share/elastalert/rules/:/opt/elastalert/rules
+      -  /usr/share/elastalert/rules/:/etc/elastalert/rules
       -  /usr/share/elastalert/rule_templates:/opt/elastalert/rule_templates :ro
     networks:
       - esnet
