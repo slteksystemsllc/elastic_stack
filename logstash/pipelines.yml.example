@@ -1,8 +1,11 @@
-- pipeline.id: windows
-  path.config: "/usr/share/logstash/configs/windows"
+#- pipeline.id: windows
+#  path.config: "/usr/share/logstash/configs/windows"
 #- pipeline.id: security_onion-json
 #  path.config: "/usr/share/logstash/configs/security_onion-json"
-- pipeline.id: firewall
-  path.config: "/usr/share/logstash/configs/firewall"
+#- pipeline.id: firewall
+#  path.config: "/usr/share/logstash/configs/firewall"
 #- pipeline.id: bro-tsv
 #  path.config: "/usr/share/logstash/configs/bro-json"
+ - pipeline.id: cisco_firewall
+   path.config: "/usr/share/logstash/configs/cisco_firewall/"
+
