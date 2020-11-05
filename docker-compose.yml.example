@@ -109,8 +109,8 @@ services:
     depends_on:
       - es01
     volumes:
-      -  /usr/share/elastalert:/opt/elastalert
-      -  /usr/share/elastalert/elastalert-server/config:/opt/elastalert-server/config
+      -  /usr/share/elastalert/config.yaml:/opt/elastalert/config.yaml
+      -  /usr/share/elastalert/elastalert-server/config/config.json:/opt/elastalert-server/config/config.json
       -  /usr/share/elastalert/rules:/opt/elastalert/rules
       -  /usr/share/elastalert/rule_templates:/opt/elastalert/rule_templates
     networks:
