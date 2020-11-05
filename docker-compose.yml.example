@@ -6,6 +6,7 @@ services:
     restart: always
     environment:
       - node.name=es01
+      - discovery.seed_hosts: []
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms8g -Xmx8g"
       - path.repo=/snapshots
