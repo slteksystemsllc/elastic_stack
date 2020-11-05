@@ -41,15 +41,17 @@ cp -r /opt/elastic_stack/logstash/rules/* /usr/share/logstash/rules/
 # Elastalert Pre-Config
 
 mkdir -p /usr/share/elastalert/
+mkdir -p /usr/share/elastalert/config/
 mkdir -p /usr/share/elastalert/rules/
-mkdir -p /opt/elastalert-server/config/
-mkdir -p /opt/elastalert/rules_templates/
+mkdir -p /usr/share/elastalert/rule_templates/
+mkdir -p /usr/share/elastalert/elastalert-server/config/
 
 sudo chown 1000:1000 -R /usr/share/elastalert/
+sudo chown 1000:1000 -R /usr/share/elastalert-server/
 
 cp -r /opt/elastic_stack/elastalert/example_rules/* /usr/share/elastalert/rules/
 cp -f /opt/elastic_stack/elastalert/config.yaml.example /usr/share/elastalert/config.yaml
-cp -f /opt/elastic_stack/elastalert/config/config.json /opt/elastalert-server/config/config.json
+cp -f /opt/elastic_stack/elastalert/config.json /usr/share/elastalert/config/config.json
 
 cd /usr/share/elastic_stack/
 
