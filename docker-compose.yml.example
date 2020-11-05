@@ -113,7 +113,7 @@ services:
       -  /usr/share/elastalert/config.yaml:/opt/elastalert/config.yaml:ro
       -  /usr/share/elastalert/config/config.json:/opt/elastalert-server/config/config.json:ro
       -  /usr/share/elastalert/rules/:/opt/elastalert/rules
-      -  /usr/share/elastalert/rules_templates:/opt/elastalert/rules_templates:ro
+      -  /usr/share/elastalert/rule_templates:/opt/elastalert/rule_templates :ro
     networks:
       - esnet
     logging:
