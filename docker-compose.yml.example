@@ -110,8 +110,7 @@ services:
       - es01
     volumes:
       -  /usr/share/elastalert:/opt/elastalert:ro
-      -  /usr/share/elastalert/config.yaml:/opt/elastalert/:ro
-      -  /usr/share/elastalert/elastalert-server/config/config.json:/opt/elastalert-server/config/:ro
+      -  /usr/share/elastalert/elastalert-server/config:/opt/elastalert-server/config/:ro
       -  /usr/share/elastalert/rules:/opt/elastalert/rules
       -  /usr/share/elastalert/rule_templates:/opt/elastalert/rule_templates :ro
     networks:
