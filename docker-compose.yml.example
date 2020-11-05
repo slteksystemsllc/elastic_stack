@@ -71,19 +71,6 @@ services:
       options:
         max-size: "200k"
         max-file: "10"
-  freq_server:
-    image: hasecuritysolutions/freq_server:v1.0
-    container_name: freq_server
-    restart: always
-    ports:
-      - 10004:10004
-    networks:
-      - esnet
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "200k"
-        max-file: "10"
   domain_stats:
     image: hasecuritysolutions/domain_stats:v1.0
     container_name: domain_stats
