@@ -98,7 +98,7 @@ services:
         max-size: "200k"
         max-file: "10"
   cerebro:
-    image: hasecuritysolutions/cerebro:v1.0
+    image: lmenezes/cerebro:0.9.2
     container_name: cerebro
     depends_on:
       - es01
