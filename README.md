@@ -18,7 +18,6 @@ Must have Docker installed. An example of how to do this on an Ubuntu 18.04 syst
 # Once Ubuntu is insalled run update and upgrade commands to update system
 sudo apt-get update -y && sudo apt-get upgrade -y
 
-
 # Install wget
 sudo apt-get install -y wget
 
