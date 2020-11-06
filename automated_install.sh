@@ -5,11 +5,11 @@ sudo apt-get update -y && sudo apt-get upgrade -y
 
 sudo apt-get install -y wget
 
-sudo wget https://github.com/slteksystemsllc/elastic_stack/raw/master/scripts/prereq.sh && sudo bash prereq.sh
+sudo wget https://github.com/slteksystemsllc/elasticsearch_siem/blob/master/scripts/initialize.sh && sudo bash prereq.sh
 
-sudo wget https://github.com/slteksystemsllc/elastic_stack/raw/master/scripts/initialize.sh && sudo bash initialize.sh
+sudo wget https://github.com/slteksystemsllc/elasticsearch_siem/blob/master/scripts/prereq.sh && sudo bash initialize.sh
+          
 
-cd /usr/share/elastic_stack/
+cd /usr/share/elasticsearch/
 
 docker-compose up --no-start
-
